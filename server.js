@@ -33,7 +33,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 db.sequelize.sync()
     .then(function() {
         app.listen(PORT, function() {
-        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+            console.log(db)
+            console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
         });
     })
     .catch(err =>{
