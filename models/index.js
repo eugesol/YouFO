@@ -4,8 +4,19 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
+
+
+//The process.env global variable is injected by the Node at runtime for your pplication to use,
+// and it represents the state of the system environment your application is in when it starts.
+	
+//When we write our code, we can never be sure where our application can be deployed.
+//If we require a database in development, we spin up an instance of it and we link to it via a connection string
+//However, when we deploy it to a server in production, we might possibly need to link it to a remote server
+
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
+
+// initializing empty db obj to store information about user models/table data
 const db = {};
 
 let sequelize;
