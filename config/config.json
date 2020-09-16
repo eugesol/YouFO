@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Heyw@rd2019",
+    "database": "YouFO_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "YouFO_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "YouFO_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
