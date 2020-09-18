@@ -1,3 +1,5 @@
+const bcrypt = require("bcryptjs");
+
 'use strict';
 const {
   Model
@@ -7,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       // define association here
+    }
+
+    static validPassword(password){
+      return bcrypt.compareSync(password, this.password);
     }
   };
   User.init({
@@ -19,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
+  });
+
+  User.addHook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
   return User;
 };
