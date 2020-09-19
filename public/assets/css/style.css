@@ -1,4 +1,8 @@
 /*icon styles*/
+#saved {
+  overflow-y: auto;
+  height: 300px;
+}
 .fi-social-facebook {
   color: dodgerblue;
   font-size: 2rem;
