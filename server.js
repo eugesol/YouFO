@@ -2,10 +2,11 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+var passport = require("./config/passport");
 
 
 // Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -23,7 +24,12 @@ app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 // check passport.js for explanation of sessions
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 // --------- //
