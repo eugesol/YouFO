@@ -15,7 +15,7 @@ app.use(express.json());
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-// //set handlebars
+//set handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -24,6 +24,9 @@ app.set("view engine", "handlebars");
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 );
+
+//importing routes
+require("./routes/html-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 // --------- //
