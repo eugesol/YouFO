@@ -17,9 +17,9 @@ app.use(express.json());
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-// //set handlebars
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
+//set handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // We need to use sessions to keep track of our user's login status
 // check passport.js for explanation of sessions
@@ -27,9 +27,11 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Requiring our routes
+//importing routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+
+
 
 // Syncing our database and logging a message to the user upon success
 // --------- //
