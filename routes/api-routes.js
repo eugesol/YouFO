@@ -31,24 +31,26 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    res.redirect("/signup");
   });
 
  
-  app.get("/", function(req, res) {
+  app.get("/api/sightings", function(req, res) {
+     db.Sighting.findAll({
+       limit: 10
+     }).then(data => { 
+       res.render('registered', {data:data})
+                      })
+  });
+  
+ 
+  app.get("/api/user_data", function(req, res) {
     if (!req.user) {
       res.json({});
     } else {
       res.json({
-        Date: req.sighting.Date,
-        Time: req.sighting.Time,
-        State: req.sighting.State,
-        Country: req.sighting.Country,
-        Shape: req.sighting.Shape,
-        Duration: req.sighting.Duration,
-        DatePosted: req.sighting.DatePosted,
-        Latitude: req.sighting.Latitude,
-        Longitude: req.sighting.Longitude,        
+        firstName: req.user.firstName,
+        id: req.user.id
       });
     }
   });
