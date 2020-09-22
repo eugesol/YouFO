@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "root",
-    "password": "Heyw@rd2019",
-    "database": "YouFO_db",
-    "host": "127.0.0.1",
+    "password": "rootroot",
+    "database": "youfo_db",
+    "host": "database-2.cwsmjnezvxvw.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "YouFO_db",
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "YouFO_db",
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

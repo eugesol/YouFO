@@ -1,0 +1,93 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sign Up Form</h2>
+        <form class="signup">        
+          <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input type="first-name" class="form-control" id="first-name" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name: </label>
+            <input type="last-name" class="form-control" id="last-name" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </form>
+        <br />
+        <p>Or log in <a href="/login">here</a></p>
+        <p>Return Home <a href="/" >HERE</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+  // Getting references to our form and input
+  let signUpForm = $("form.signup");
+  let firstName = $("input#first-name");
+  let lastName = $("input#last-name");
+  let emailInput = $("input#email-input");
+  let passwordInput = $("input#password-input");
+
+  // When the signup button is clicked, we validate the first name, last name,  email and password are not blank
+  signUpForm.on("submit", function(event) {
+    event.preventDefault();
+    var userData = {
+      firstName: firstName.val().trim(),
+      lastName: lastName.val().trim(),
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
+    };
+    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
+      
+      return;
+    }
+    // If we have a first name, last name, email and password, run the signUpUser function
+    signUpUser(userData.firstName, userData.lastName, userData.email, userData.password);
+    firstName.val("");
+    lastName.val("");
+    emailInput.val("");
+    passwordInput.val("");
+  });
+
+  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Otherwise we log any errors
+  function signUpUser(firstName, lastName, email, password) {
+    $.post("/api/signup", {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    })
+      .then(function(data) {
+        window.location.replace("/registered");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
+  }
+});
+</script>

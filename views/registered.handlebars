@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-md-offset-3">
+      <h2>Welcome, <span class="member-name"></span></h2>
+      <br>
+      <h2>Search Sightings by: </h2>
+      <button type="submit" class="btn btn-default all-sightings"><a class="navbar-brand" href="/api/sightings">Search</a></button>
+      <button type="submit" class="btn btn-default">My Favorites</button>
+    </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">S/N</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Country</th>
+      <th scope="col">Shape</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date Posted</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Latitude</th>
+    </tr>
+    {{#each data}}
+  <tbody>
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{ this.Date }}</td>
+      <td>{{ this.Time }}</td>
+      <td>{{ this.City }}</td>
+      <td>{{ this.State }}</td>
+      <td>{{ this.Country }}</td>
+      <td>{{ this.Shape }}</td>
+      <td>{{ this.Duration }}</td>
+      <td>{{ this.Description }}</td>
+      <td>{{ this.DatePosted }}</td>
+      <td>{{ this.Longitude }}</td>
+      <td>{{ this.Latitude }}</td>
+    </tr>
+  </tbody>
+  {{/each}}
+  </thead>
+</table>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // This file just does a GET request to figure out which user is logged in
+    // and updates the HTML on the page
+    $.get("/api/user_data").then(function (data) {
+      $(".member-name").text(data.firstName + " !");
+    });
+  }) 
+</script>
