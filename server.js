@@ -4,7 +4,6 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 var passport = require("./config/passport");
 
-
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
@@ -31,13 +30,16 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
 // Syncing our database and logging a message to the user upon success
 // --------- //
 //A model can be synchronized with the database by calling model.sync(options), an asynchronous function (that returns a Promise).
 //With this call, Sequelize will automatically perform an SQL query to the database.
 //This creates the table if it doesn't exist (and does nothing if it already exists)
+
 db.sequelize.sync()
     .then(function() {
         app.listen(PORT, function() {
@@ -49,4 +51,3 @@ db.sequelize.sync()
         console.log(err);
         throw err;
     });
-   
