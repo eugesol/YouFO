@@ -6,15 +6,32 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       // define association here
+      User.belongsToMany(models.Sighting, {
+        through: 'userFavorites'
+      })
     }
     
   };
   User.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    favorites: DataTypes.STRING    
+    firstName: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING(64),
+      allowNull: true,
+    },
+    email: {
+      type: DataTypes.STRING(64),
+      isEmail: true,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING(64),
+      allowNull: false,
+      notEmpty: true,
+    }    
   }, {
     sequelize,
     modelName: 'User',
