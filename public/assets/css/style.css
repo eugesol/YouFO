@@ -27,3 +27,14 @@ i.fi-social-tumblr {
   color: skyblue;
   font-size: 2rem;
 }
+
+#login-menu{
+align-self: left;
+}
+
+body{
+  background-image: url(/assets/css/images/giphy2.gif)
+}
+.grid-container{
+  background-color: aliceblue;
+}
