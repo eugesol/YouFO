@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
-var passport = require("./config/passport");
+const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3000;
@@ -22,7 +22,9 @@ app.set("view engine", "handlebars");
 
 // We need to use sessions to keep track of our user's login status
 // check passport.js for explanation of sessions
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -40,14 +42,19 @@ app.use(
 //With this call, Sequelize will automatically perform an SQL query to the database.
 //This creates the table if it doesn't exist (and does nothing if it already exists)
 
-db.sequelize.sync()
-    .then(function() {
-        app.listen(PORT, function() {
-            // console.log(db)
-            console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-        });
-    })
-    .catch(err =>{
-        console.log(err);
-        throw err;
+db.sequelize
+  .sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      // console.log(db)
+      console.log(
+        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+        PORT,
+        PORT
+      );
     });
+  })
+  .catch(err => {
+    console.log(err);
+    throw err;
+  });
