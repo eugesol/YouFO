@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --quiet .",
+    "test": "npm run lint",
     "start": "node server.js"
   },
   "repository": {
@@ -30,8 +31,11 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.9.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "handlebars": "^4.5.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "prettier": "^1.13.7"
   }
 }
