@@ -27,7 +27,6 @@ fs.readFile("complete.csv", "utf8", (err, data) => {
 
 function featureBuilder(line, keyList) {
   const lineItems = line.split(",");
-  console.log(keyList);
   const feature = {
     type: "Feature",
     geometry: {
@@ -45,7 +44,7 @@ function featureBuilder(line, keyList) {
 
 function featureCompiler(lines, keys) {
   const keyArr = keys.split(",");
-  lines.forEach(line =>{
+  lines.forEach(line => {
     const feature = featureBuilder(line, keyArr);
     featureCollection.features.push(feature);
   });
