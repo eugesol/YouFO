@@ -48,5 +48,9 @@ function featureCompiler(lines, keys) {
     const feature = featureBuilder(line, keyArr);
     featureCollection.features.push(feature);
   });
-  console.log(featureCollection.features.length);
+  const geoJSON = JSON.stringify(featureCollection);
+
+  fs.writeFile("geoJSON.json", geoJSON, "utf8", result =>{
+    console.log("CSV converted!");
+  });
 }
