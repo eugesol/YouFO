@@ -4,6 +4,11 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 var passport = require("./config/passport");
 
+const Handlebars = require('handlebars');
+
+// Import function exported by newly installed node modules.
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
@@ -17,7 +22,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //set handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main",
+                                    handlebars: allowInsecurePrototypeAccess(Handlebars)
+                                    }));
 app.set("view engine", "handlebars");
 
 // We need to use sessions to keep track of our user's login status
