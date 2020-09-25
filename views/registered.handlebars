@@ -1,17 +1,17 @@
 {{!-- nav --}}
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand menu-link" id="login-menu"  href="/logout">Logout</a>
-    <div class="navbar-brand">
-      <a id="title" href="/">YouF&#128125;</a>
-    </div>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button id="search-btn" class="btn my-2 my-sm-0 all-sightings" type="submit" href="/api/sightings">Search</button>
-    </form>
-  </nav>
-  {{!-- welcome message --}}
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand menu-link" id="login-menu" href="/logout">Logout</a>
+  <div class="navbar-brand">
+    <a id="title" href="/">YouF&#128125;</a>
+  </div>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button id="search-btn" class="btn my-2 my-sm-0 all-sightings" type="submit" href="/api/sightings">Search</button>
+  </form>
+</nav>
+{{!-- welcome message --}}
 <br>
-<div class=" container  d-flex justify-content-center" >
+<div class=" container  d-flex justify-content-center">
   <div id="welcome" class="row">
     <div class="col-md-12 col-md-offset-3">
       <h2>Welcome, <span class="member-name"></span></h2>
@@ -24,7 +24,7 @@
 {{!-- table --}}
 
 <table id="table" class=" container table table-hover table-success table-striped table-bordered">
-  <thead >
+  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Date</th>
@@ -57,11 +57,20 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-  $(document).ready(function () {
+  document.addEventListener("DOMContentLoaded", function (event) {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
-    $.get("/api/user_data").then(function (data) {
-      $(".member-name").text(data.firstName + " !");
-    });
-  }) 
+    async function getUser() {
+      let res;
+      try {
+        res = await fetch("/api/user_data");
+      } 
+      catch (err) {
+        console.log(err)
+      }
+      const div = document.getElementsByClassName('member-name')
+      div[0].innerText = res.firstName + "!";
+    };
+    getUser();
+  });
 </script>
