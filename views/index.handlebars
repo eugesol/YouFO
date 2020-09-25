@@ -1,387 +1,357 @@
-{{!-- <nav>
-  <div class="nav-wrapper purple darken-4">
-    <a style='padding-left:5%' href="#" class="brand-logo">YouFO</a>
-  </div>
-</nav> --}}
-
 <header>
-  <!-- / logo and ad break -->
-  <br>
-  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Menu</div>
-  </div>
-</header>
 
-<!-- Navbar content -->
-{{!-- </nav> --}}
-{{!-- <body class="lock-screen"> --}}
-<!-- Navigation Menu -->
-
-<div class="container">
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand menu-link" id="login-menu" href="/signup">Login</a>
+    <div class="navbar-brand">
+      <a id="title" href="/">YouF&#128125;</a>
+    </div>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button id="search-btn" class="btn my-2 my-sm-0 all-sightings" type="submit" href="/api/sightings">Search</button>
     </form>
-</div>
-</nav>
-<hr>
+  </nav>
+
+</header>
 
 <br>
-<article class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell medium-6 large-8">
-      <p><img src="https://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>
-    </div>
-    <div id="saved" class="cell medium-6 large-4">
-      <h3 class="header-title">
-        Saved Sightings
-      </h3>
-      <div class="row">
-        <p class="sighting-name">
-          Sighting 1, shape
-          <button class="button secondary small">
-            <i class="fa fa-user-times" aria-hidden="true"></i>
-            Delete
-          </button>
-        </p>
-        <p class="sighting-location">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          Mumbai, India. date
-        </p>
-        <p class="sighting-info">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          placeholder text
-        </p>
-      </div>
-      <div class="row">
-        <p class="sighting-name">
-          Sighting 2, shape
-          <button class="button secondary small">
-            <i class="fa fa-user-times" aria-hidden="true"></i>
-            Delete
-          </button>
-        </p>
-        <p class="sighting-location">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          Mumbai, India. date
-        </p>
-        <p class="sighting-info">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          placeholder text
-        </p>
-      </div>
-      <div class="row">
-        <p class="sighting-name">
-          Sighting 3, shape
-          <button class="button secondary small">
-            <i class="fa fa-user-times" aria-hidden="true"></i>
-            Delete
-          </button>
-        </p>
-        <p class="sighting-location">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          Mumbai, India. date
-        </p>
-        <p class="sighting-info">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          placeholder text
-        </p>
-      </div>
-      <div class="row">
-        <p class="sighting-name">
-          Sighting 4, shape
-          <button class="button secondary small">
-            <i class="fa fa-user-times" aria-hidden="true"></i>
-            Delete
-          </button>
-        </p>
-        <p class="sighting-location">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          Mumbai, India. date
-        </p>
-        <p class="sighting-info">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          placeholder text
-        </p>
-      </div>
-    </div>
 
-    <hr>
-
-    <div class="text-center">
+<div class="container main-container">
+  <div class="card mb-3">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-8">
+        <img src="..." class="card-img" alt="map">
+      </div>
+      <div id="saved" class="col-12 col-md-6 col-lg-4">
+        <div class="card-body">
+          <h3 class="card-title">Saved Sightings</h3>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <hr>
+          <p class="sighting-name">
+            Sighting 1, Oval.
+            <button id="delete-btn" class="btn float-right btn-warning">
+              Delete
+            </button>
+          </p>
+          <p class="sighting-location">
+            Mumbai, India. 12/13/1989
+          </p>
+          <hr>
+          <p class="card-text"><small class="text-muted">Your planet is next!</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- <div class="text-center">
       <h4 style="margin: 0;" class="text-center">UFO Articles</h4>
     </div>
 
     <hr>
 
-    <div class="grid-x grid-margin-x">
-      <div class="large-8 cell" style="border-right: 1px solid #E3E5E8;">
+    <div class="container">
+      <div class="row">
 
 
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
+        <div class="large-8 cell" style="border-right: 1px solid #E3E5E8;">
+
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">'Death Star' Vaporizes Its Own Planet</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
           </div>
-          <div class="large-6 cell">
-            <h5><a href="#">'Death Star' Vaporizes Its Own Planet</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">NASA's SLS Rocket Sheds Saturn V Color Scheme in Design Review</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
           </div>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">Ingredients for Life Were Always Present on Earth, Comet Suggests</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">Astronaut's Watch Worn on the Moon Sells for Record $1.6 Million</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">Interstellar Dust on the Galaxy's Magnetic Field | Space Wallpaper</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">Explore the Moon (Virtually) with These Awesome Global Maps</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="grid-x grid-margin-x">
+            <div class="large-6 cell">
+              <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
+                  alt="article preview image"></p>
+            </div>
+            <div class="large-6 cell">
+              <h5><a href="#">Best Space Books and Sci-Fi: A Space.com Reading List</a></h5>
+              <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
+                aperiam nesciunt magni facilis ullam.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <ul class="pagination margin-bottom-2" role="navigation" aria-label="Pagination">
+            <li class="disabled">Previous <span class="show-for-sr">page</span></li>
+            <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+            <li><a href="#" aria-label="Page 2">2</a></li>
+            <li><a href="#" aria-label="Page 3">3</a></li>
+            <li><a href="#" aria-label="Page 4">4</a></li>
+            <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+          </ul>
+
         </div>
+        <div class="grid-x large-4 cell">
 
-        <hr>
+          <aside>
 
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">NASA's SLS Rocket Sheds Saturn V Color Scheme in Design Review</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
+            <div class="grid-x small-up-3">
+
+              <div class="cell text-center">
+                <i class="fi-social-facebook"></i>
+                <h6>56,009</h6>
+                <p><small>FOLLOWERS</small></p>
+                <br>
+              </div>
+
+              <div class="cell text-center">
+                <i class="fi-social-twitter"></i>
+                <h6>76,905</h6>
+                <p><small>FOLLOWERS</small></p>
+                <br>
+              </div>
+
+              <div class="cell text-center">
+                <i class="fi-social-instagram"></i>
+                <h6>34,099</h6>
+                <p><small>FOLLOWERS</small></p>
+                <br>
+              </div>
+
+              <div class="cell text-center">
+                <i class="fi-social-tumblr"></i>
+                <h6>13,765</h6>
+                <p><small>FOLLOWERS</small></p>
+              </div>
+
+              <div class="cell text-center">
+                <i class="fi-social-youtube"></i>
+                <h6>99,000</h6>
+                <p><small>FOLLOWERS</small></p>
+              </div>
+
+            </div>
+
+            <br>
+
+            <div class="grid-x cell">
+              <p class="lead">UFO Merch</p>
+              <p><img src="https://placehold.it/400x300&text=Buy Me!" alt="advertisement of ShamWow"></p>
+            </div>
+
+            <br>
+
+            <div class="grid-x cell">
+              <p class="lead">UFO Merch Links</p>
+
+              <div class="media-object">
+                <div class="media-object-section">
+                  <img class="thumbnail" src="https://placehold.it/100">
+                </div>
+                <div class="media-object-section">
+                  <h5>All I need is a space suit and I'm ready to go.</h5>
+                </div>
+              </div>
+
+              <div class="media-object">
+                <div class="media-object-section">
+                  <img class="thumbnail" src="https://placehold.it/100">
+                </div>
+                <div class="media-object-section">
+                  <h5>Are the stars out tonight? I don't know if it's cloudy or bright.</h5>
+                </div>
+              </div>
+
+              <div class="media-object">
+                <div class="media-object-section">
+                  <img class="thumbnail" src="https://placehold.it/100">
+                </div>
+                <div class="media-object-section">
+                  <h5>And the world keeps spinning.</h5>
+                </div>
+              </div>
+
+              <div class="media-object">
+                <div class="media-object-section">
+                  <img class="thumbnail" src="https://placehold.it/100">
+                </div>
+                <div class="media-object-section">
+                  <h5>Cold hearted orb that rules the night.</h5>
+                </div>
+              </div>
+
+            </div>
+
+          </aside>
+
         </div>
-
-        <hr>
-
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">Ingredients for Life Were Always Present on Earth, Comet Suggests</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">Astronaut's Watch Worn on the Moon Sells for Record $1.6 Million</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">Interstellar Dust on the Galaxy's Magnetic Field | Space Wallpaper</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">Explore the Moon (Virtually) with These Awesome Global Maps</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="grid-x grid-margin-x">
-          <div class="large-6 cell">
-            <p><img src="https://placehold.it/600x370&text=Look at me!" alt="image for article"
-                alt="article preview image"></p>
-          </div>
-          <div class="large-6 cell">
-            <h5><a href="#">Best Space Books and Sci-Fi: A Space.com Reading List</a></h5>
-            <p>
-              <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-              <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-              <span><i class="fi-comments"> 6 comments</i></span>
-            </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus
-              aperiam nesciunt magni facilis ullam.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <ul class="pagination margin-bottom-2" role="navigation" aria-label="Pagination">
-          <li class="disabled">Previous <span class="show-for-sr">page</span></li>
-          <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-          <li><a href="#" aria-label="Page 2">2</a></li>
-          <li><a href="#" aria-label="Page 3">3</a></li>
-          <li><a href="#" aria-label="Page 4">4</a></li>
-          <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-        </ul>
-
       </div>
-      <div class="grid-x large-4 cell">
-
-        <aside>
-
-          <div class="grid-x small-up-3">
-
-            <div class="cell text-center">
-              <i class="fi-social-facebook"></i>
-              <h6>56,009</h6>
-              <p><small>FOLLOWERS</small></p>
-              <br>
-            </div>
-
-            <div class="cell text-center">
-              <i class="fi-social-twitter"></i>
-              <h6>76,905</h6>
-              <p><small>FOLLOWERS</small></p>
-              <br>
-            </div>
-
-            <div class="cell text-center">
-              <i class="fi-social-instagram"></i>
-              <h6>34,099</h6>
-              <p><small>FOLLOWERS</small></p>
-              <br>
-            </div>
-
-            <div class="cell text-center">
-              <i class="fi-social-tumblr"></i>
-              <h6>13,765</h6>
-              <p><small>FOLLOWERS</small></p>
-            </div>
-
-            <div class="cell text-center">
-              <i class="fi-social-youtube"></i>
-              <h6>99,000</h6>
-              <p><small>FOLLOWERS</small></p>
-            </div>
-
-          </div>
-
-          <br>
-
-          <div class="grid-x cell">
-            <p class="lead">UFO Merch</p>
-            <p><img src="https://placehold.it/400x300&text=Buy Me!" alt="advertisement of ShamWow"></p>
-          </div>
-
-          <br>
-
-          <div class="grid-x cell">
-            <p class="lead">UFO Merch Links</p>
-
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100">
-              </div>
-              <div class="media-object-section">
-                <h5>All I need is a space suit and I'm ready to go.</h5>
-              </div>
-            </div>
-
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100">
-              </div>
-              <div class="media-object-section">
-                <h5>Are the stars out tonight? I don't know if it's cloudy or bright.</h5>
-              </div>
-            </div>
-
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100">
-              </div>
-              <div class="media-object-section">
-                <h5>And the world keeps spinning.</h5>
-              </div>
-            </div>
-
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100">
-              </div>
-              <div class="media-object-section">
-                <h5>Cold hearted orb that rules the night.</h5>
-              </div>
-            </div>
-
-          </div>
-
-        </aside>
-
-      </div>
-    </div>
-</article>
-
+      </article>
+ --}}
 
 <footer>
-  <div class="grid-x grid-margin-x expanded callout secondary"></div>
-
-  </div>
-  <div class="grid-x grid-margin-y expanded">
-
-    <div class="medium-6 cell">
-      <ul class="menu">
-        <li><a href="#">Legal</a></li>
-        <li><a href="#">Partner</a></li>
-        <li><a href="#">Explore</a></li>
-      </ul>
-    </div>
-
-    <div class="medium-6 cell">
-      <ul class="menu align-right">
-        <li class="menu-text">Copyright ©</li>
-      </ul>
-    </div>
-  </div>
 
 </footer>
 

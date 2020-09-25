@@ -1,49 +1,84 @@
-/*icon styles*/
+
+
 #saved {
   overflow-y: auto;
-  height: 300px;
-}
-.fi-social-facebook {
-  color: dodgerblue;
-  font-size: 2rem;
-}
-.fi-social-youtube {
-  color: red;
-  font-size: 2rem;
-}
-.fi-social-pinterest {
-  color: darkred;
-  font-size: 2rem;
-}
-i.fi-social-instagram {
-  color: brown;
-  font-size: 2rem;
-}
-i.fi-social-tumblr {
-  color: navy;
-  font-size: 2rem;
-}
-.fi-social-twitter {
-  color: skyblue;
-  font-size: 2rem;
+  height: 600px;
 }
 
-#login-menu {
-  align-self: left;
+
+#login-menu{
+align-self: left;
 }
 
 body{
-  background-image: url(/assets/css/images/space.jpg)
+  background-image: url(/assets/css/images/space.jpg);
+  font-family: 'Abel', sans-serif;
 }
-.grid-container {
-  background-color: aliceblue;
+
+.main-container{
+  background-color: white
 }
+
+h3{
+  color: rgb(111, 192, 19);
+  font-weight: bolder;
+}
+#welcome{
+  color: rgb(235, 129, 8);
+  font-weight: bolder;
+  text-shadow: 2px 2px #7e220b;
+}
+#forms{
+  margin-left: 100px;
+}
+#title{
+  color: rgb(212, 235, 8);
+  font-weight: bolder;
+  margin-left: 180px;
+  margin-right: auto
+ 
+}
+#favs{
+  color: rgb(212, 235, 8);
+  font-weight: bolder;
+  margin-left: 60px;
+  margin-right: auto;
+  text-shadow: 2px 2px #0a5f07;
+}
+#title2{
+  color: rgb(212, 235, 8);
+  font-weight: bolder;
+}
+#title3{
+  color: rgb(235, 129, 8);
+  font-weight: bolder;
+}
+#link{
+  color: rgb(212, 235, 8);
+  font-weight: bold;
+}
+
+#login-menu{
+  color: rgb(111, 192, 19);
+  font-weight: bolder;
+}
+
+#search-btn{
+  background-color: rgb(111, 192, 19);
+}
+#delete-btn{
+  align-self: right ;
+}
+
+
+/* forms */
 .translucent-form-overlay {
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
   background-color: rgba(54, 54, 54, 0.8);
   padding: 20px;
   color: #fefefe;
+  justify-self: center;
 }
 
 .translucent-form-overlay .columns.row {
