@@ -45,10 +45,12 @@ function featureBuilder(line, keyList) {
 
 function featureCompiler(lines, keys) {
   const keyArr = keys.split(",");
-  lines.forEach(line => {
-    const feature = featureBuilder(line, keyArr);
+
+  for (let i = 0; i < 500; i++) {
+    const feature = featureBuilder(lines[i], keyArr);
     featureCollection.features.push(feature);
-  });
+  }
+
   const geoJSON = JSON.stringify(featureCollection);
 
   fs.writeFile("geoJSON.json", geoJSON, "utf8", result => {

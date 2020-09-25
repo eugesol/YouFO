@@ -40,6 +40,11 @@
 <br>
 <article class="grid-container">
   <div class="grid-x grid-margin-x">
+    <div id="map" class="cell medium-12 large-12">
+  
+    </div>
+  </div>
+  {{!-- <div class="grid-x grid-margin-x">
     <div class="cell medium-6 large-8">
       <p><img src="https://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>
     </div>
@@ -367,6 +372,7 @@
 
       </div>
     </div>
+  </div> --}}
 </article>
 
 
@@ -395,6 +401,19 @@
 
 
 
+<script>
+  function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.036 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({ position: uluru, map: map });
+}
+</script>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
