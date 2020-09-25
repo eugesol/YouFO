@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const fs = require("fs");
 
 // {
@@ -50,7 +51,7 @@ function featureCompiler(lines, keys) {
   });
   const geoJSON = JSON.stringify(featureCollection);
 
-  fs.writeFile("geoJSON.json", geoJSON, "utf8", result =>{
+  fs.writeFile("geoJSON.json", geoJSON, "utf8", result => {
     console.log("CSV converted!");
   });
 }
