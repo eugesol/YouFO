@@ -32,141 +32,40 @@ i.fi-social-tumblr {
   align-self: left;
 }
 
-body {
-  background-image: url(/assets/css/images/giphy2.gif);
+body{
+  background-image: url(/assets/css/images/space.jpg)
 }
 .grid-container {
   background-color: aliceblue;
 }
-
-.button-rounded-hover {
-  border: 0;
-  border-radius: 5000px;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  transition: all 0.35s ease;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  background-color: chartreuse;
-  color: black;
+.translucent-form-overlay {
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
 }
 
-.button-rounded-hover:before {
-  opacity: 0;
-  content: "";
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  border-radius: inherit;
-  background-color: #fefefe;
-  transition: all 0.3s;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
+.translucent-form-overlay .columns.row {
+  display: block;
 }
 
-.button-rounded-hover:after {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  border: 5px solid chartreuse;
-  content: "";
-  border-radius: inherit;
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
 }
 
-.button-rounded-hover:hover,
-.button-rounded-hover:focus {
-  background-color: greenyellow;
-  color: darkgrey;
-}
-
-.button-rounded-hover:hover:before,
-.button-rounded-hover:focus:before {
-  -webkit-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  transform: translateX(0%);
-  opacity: 0.25;
-}
-.callout-hover-reveal .callout-footer {
-  display: none;
-}
-.callout-hover-reveal {
-  text-align: center;
-  background-image: url(/assets/css/images/giphy2.gif);
-  color: chartreuse;
-}
-
-.table-expand {
-  margin-top: 5rem;
-}
-
-.table-expand td {
+.translucent-form-overlay input, .translucent-form-overlay select {
   color: #8a8a8a;
 }
 
-.table-expand tr {
-  border: 1px solid #e6e6e6;
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
 }
 
-.table-expand .text-right {
-  padding-right: 3rem;
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
 }
 
-.table-expand-row.is-active .expand-icon::after {
-  content: "-";
+.translucent-form-overlay input::placeholder {
+  color:rgb(177, 244, 77);
 }
-
-.table-expand-row .expand-icon::after {
-  content: "+";
-  float: right;
-}
-
-.table-expand-row-content {
-  display: none;
-}
-
-.table-expand-row-content.is-active {
-  display: table-row;
-  -webkit-animation: fadeIn ease-in 1;
-  animation: fadeIn ease-in 1;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-}
-
-.table-expand-row-nested {
-  background-color: #e6e6e6;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.sticky-topbar {
-  width: 100%;
-  text-align: center;
-}
-

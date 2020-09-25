@@ -38,10 +38,10 @@
   </div>
 </div> --}}
 {{!-- <table class="table table-bordered"> --}}
-<table class=" table table-expand table-bordered">
+<table class="table-expand">
   <thead>
     <tr>
-      <th scope="col">S/N</th>
+      <th scope="col" width="200">S/N</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
       <th scope="col">City</th>
@@ -50,9 +50,9 @@
       <th scope="col">Shape</th>
       <th scope="col">Duration</th>
       <th scope="col">Description</th>
-      <th scope="col">Date Posted</th>
+      {{!-- <th scope="col">Date Posted</th>
       <th scope="col">Longitude</th>
-      <th scope="col">Latitude</th>
+      <th scope="col">Latitude</th> --}}
     </tr>
     {{#each data}}
   <tbody>
@@ -66,9 +66,6 @@
       <td>{{ this.Shape }}</td>
       <td>{{ this.Duration }}</td>
       <td>{{ this.Description }}</td>
-      <td>{{ this.DatePosted }}</td>
-      <td>{{ this.Longitude }}</td>
-      <td>{{ this.Latitude }}</td>
     </tr>
   </tbody>
   {{/each}}
