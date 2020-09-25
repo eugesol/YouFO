@@ -11,6 +11,7 @@ const fs = require("fs");
 //     "name": "Dinagat Islands"
 //   }
 // }
+const coordinatesCollection = [];
 
 const featureCollection = {
   type: "FeatureCollection",
@@ -37,6 +38,8 @@ function featureBuilder(line, keyList) {
   };
 
   feature.geometry.coordinates = [lineItems[11 - 2], lineItems[11 - 1]];
+
+  coordinatesCompiler(feature.geometry.coordinates);
   keyList.forEach((key, i) => {
     feature.properties[key] = lineItems[i];
   });
@@ -53,7 +56,17 @@ function featureCompiler(lines, keys) {
 
   const geoJSON = JSON.stringify(featureCollection);
 
-  fs.writeFile("geoJSON.json", geoJSON, "utf8", result => {
-    console.log("CSV converted!");
-  });
+  // fs.writeFileSync("geoJSON.json", geoJSON, "utf8", result => {
+  //   console.log("CSV converted!");
+  // });
+  console.log(coordinatesCollection);
+}
+
+function coordinatesCompiler(coord) {
+  const obj = {
+    lat: parseFloat(coord[0]),
+    lng: parseFloat(coord[1])
+  };
+  console.log(obj);
+  coordinatesCollection.push(obj);
 }
