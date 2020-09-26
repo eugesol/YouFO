@@ -1,0 +1,158 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="top-bar-left">
+      <ul class="menu">
+      <li>
+        <a  href="/login" class="menu-link">Login</a>
+      </li>
+      <li>
+        <a  href="/" class="menu-link">Return Home</a>
+      </li>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sighting Report Form</h2>
+        <div class="well">
+        <form class="post-sighting">               
+          <div class="form-group">
+            <label for="firstname">Sighting Date:</label>
+            <input type="date" name="sighting-date" class="form-control" id="date" placeholder="Sighting Date">
+                     
+          <div class="form-group">
+            <label for="lastname">Sighting Time: </label>
+            <input type="time" class="form-control" id="time" placeholder="Sighting Time">
+          </div>          
+          <div class="form-group">
+            <label for="exampleInputPassword1">Country</label>
+            <select id='brandFilter' class='form-control'>
+            <option>Select Country</option>
+            {{#each country}}
+            <option id="country">{{this}}</option>
+            {{/each}}
+          </select>
+          </div>          
+          <div class="form-group">
+            <label for="exampleInputPassword1">State</label>
+            <select id='brandFilter' class='form-control'>
+            <option>Select State</option>
+            {{#each state}}
+            <option id="state">{{this}}</option>
+            {{/each}}
+          </select>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="city" class="form-control" id="city" placeholder="City">
+          <div class="form-group">
+            <label for="duration">Duration</label>            
+            <input type="duration" class="form-control" id="duration" placeholder="Duration">
+          </div>
+          <div class="form-group">
+            <label for="duration">Shape</label>            
+            <input type="duration" class="form-control" id="shape" placeholder="Shape">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+          </div>
+          <button type="post" class="btn btn-default">Submit Sighting</button>
+        </form>
+        </div>
+        <br />
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+  // Getting references to our form and input
+  let reportForm = $("form.post-sighting");
+  let date = $("#date");
+  let time = $("#time");
+  let country = $("#country");
+  let state = $("#state");
+  let city = $("#city");
+  let duration = $("#duration");
+  let description = $("#description");
+  let shape = $("#shape")
+  
+  //todays date for post 
+
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  let todayDate = mm + '/' + dd + '/' + yyyy;
+  //console.log(todayDate)
+
+  
+  reportForm.on("submit", function(event) {
+    event.preventDefault();
+    var details = {
+      date: date.val(),
+      time: time.val(),
+      country: country.val(),
+      state: state.val().trim(),
+      city: city.val().trim(),
+      duration: duration.val().trim(),
+      description: description.val().trim(),
+      shape: shape.val().trim(),   
+    };
+    //console.log(details)
+    if (!details.date || !details.time || !details.country || !details.description) {
+      alert("date, time, country and descriptio  must be entered!")      
+      return;
+    }
+    // If valid parameters are entered
+    postUfoSighting(details.date, details.time, details.country, details.state, details.city, details.duration, details.description, details.shape, todayDate);
+    date.val("");
+    time.val("");
+    country.val("");
+    state.val("");
+    city.val("");
+    duration.val("");
+    description.val("");
+    shape.val("");
+    todayDate
+  });
+
+
+
+  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Otherwise we log any errors
+  function postUfoSighting(date, time, country, state, city, duration, description, shape, todayDate) {
+    $.post("/api/ufo_sighting", {
+      date: date,
+      time: time,
+      country: country,
+      state: state,
+      city: city,
+      duration, duration,
+      description: description,
+      shape: shape,
+      datePosted: todayDate
+    })
+      .then(function(data) {
+        //console.log(data)
+        window.location.replace("/");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
+  }
+  
+  
+}); 
+  
+</script>

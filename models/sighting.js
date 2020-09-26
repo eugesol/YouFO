@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Sighting.init({
     Date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     Time: {
