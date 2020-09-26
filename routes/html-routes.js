@@ -1,21 +1,19 @@
 
+
 const fs = require('fs');
-
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-var db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = function(app) {
-
-  app.get("/signup", function(req, res) {
-    res.render("signup")
+  app.get("/signup", (req, res) => {
+    res.render("signup");
   });
 
-  app.get("/login", function(req, res) {
-    res.render("login")
-    
+  app.get("/login", (req, res) => {
+    res.render("login");
   });
-  
+
   app.get("/registered", isAuthenticated, function(req, res) { 
      fs.readFile("./config/dropdown.json", "utf8", (err, jsonString) => {
       if (err) {
@@ -72,3 +70,4 @@ module.exports = function(app) {
  
 
 };
+
