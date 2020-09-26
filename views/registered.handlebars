@@ -4,10 +4,7 @@
   <div class="navbar-brand">
     <a id="title" href="/">YouF&#128125;</a>
   </div>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button id="search-btn" class="btn my-2 my-sm-0 all-sightings" type="submit" href="/api/sightings">Search</button>
-  </form>
+  <a class="navbar-brand menu-link" id="login-menu" href="/postSighting">Report Sighting</a>
 </nav>
 
 
@@ -19,10 +16,10 @@
       <h2 hidden><span class="member-id"></span></h2>
       <div class="well">
         <form class="registration">
-          <h2>Search Sighting History: </h2>          
+          <h2>Search Sighting History: </h2>
           <div class="dropdownMenus col-md-12">
             <div class='form-field'>
-              <label for='brandFilter'>Country</label>              
+              <label for='brandFilter'>Country</label>
               <select id='country-select' class='form-control'>
                 <option value="" hidden>Select Country</option>
                 {{#if country}}
@@ -47,7 +44,7 @@
 
             <div class='form-field'>
               <label for='colorFilter'>BETWEEN</label>
-              <input type="month" id="date1" value = "1900-01" name="bdaymonth">
+              <input type="month" id="date1" value="1900-01" name="bdaymonth">
             </div>
 
             <div class='form-field'>
@@ -60,87 +57,85 @@
             </div>
           </div>
           <button type="submit" class="btn btn-default all-sightings"><a class="navbar-brand">Search</a></button>
-           <button type="button" class="btn btn-default "><a href="/registered">RESET</a></button>
+          <button type="button" class="btn btn-default "><a href="/registered">RESET</a></button>
         </form>
       </div>
     </div>
   </div>
 </div>
-      <div class="col-md-6 col-md-offset-3">
-        <button type="submit" class="btn btn-default">My Favorites</button>
-      </div>
+<div class="col-md-6 col-md-offset-3">
+  <button type="submit" class="btn btn-default">My Favorites</button>
+</div>
+
 
 <div class="render">
-<table class="table table-bordered">
-  <thead>
-    <tr>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
 
-{{!-- welcome message --}}
-<br>
-<div class=" container  d-flex justify-content-center">
-  <div id="welcome" class="row">
-    <div class="col-md-12 col-md-offset-3">
-      <h2>Welcome, <span class="member-name"></span></h2>
-      <br>
-      <button id="favs" type="submit" class="btn btn-default">My Favorites</button>
-    </div>
-  </div>
-</div>
-<br>
-{{!-- table --}}
+        {{!-- welcome message --}}
+        <br>
+        <div class=" container  d-flex justify-content-center">
+          <div id="welcome" class="row">
+            <div class="col-md-12 col-md-offset-3">
+              <h2>Welcome, <span class="member-name"></span></h2>
+              <br>
+              <button id="favs" type="submit" class="btn btn-default">My Favorites</button>
+            </div>
+          </div>
+        </div>
+        <br>
+        {{!-- table --}}
 
-<table id="table" class=" container table table-hover table-success table-striped table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
+        <table id="table" class=" container table table-hover table-success table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
 
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
-      <th scope="col">Country</th>
-      <th scope="col">State</th>
-      <th scope="col">City</th>
-      <th scope="col">Description</th>
-      <th scope="col">Shape</th>
-      <th scope="col">Duration</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Country</th>
+              <th scope="col">State</th>
+              <th scope="col">City</th>
+              <th scope="col">Description</th>
+              <th scope="col">Shape</th>
+              <th scope="col">Duration</th>
 
-      <th scope="col">Date Posted</th>
-      <th scope="col">Select Favorites</th>
-    </tr>
+              <th scope="col">Date Posted</th>
+              <th scope="col">Select Favorites</th>
+            </tr>
 
-      <th scope="col">Description</th>
-      <<<<<<< HEAD {{!-- <th scope="col">Date Posted</th>
-      <th scope="col">Longitude</th>
-      <th scope="col">Latitude</th> --}}=======>>>>>>> 02802c1c794201680dc29c1fac147531436375bf
-    </tr>
-    {{#each data}}
-  <tbody>
-    <tr>
-      <th scope="row">{{this.id}}</th>
-      <td>{{ this.Date }}</td>
-      <td>{{ this.Time }}</td>
-      <td>{{ this.City }}</td>
-      <td>{{ this.State }}</td>
-      <td>{{ this.Country }}</td>
-      <td>{{ this.Shape }}</td>
-      <td>{{ this.Duration }}</td>
-      <td>{{ this.Description }}</td>
-    </tr>
-  </tbody>
-  {{/each}}
+            <th scope="col">Description</th>
+      </tr>
+      {{#each data}}
+    <tbody>
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{ this.Date }}</td>
+        <td>{{ this.Time }}</td>
+        <td>{{ this.City }}</td>
+        <td>{{ this.State }}</td>
+        <td>{{ this.Country }}</td>
+        <td>{{ this.Shape }}</td>
+        <td>{{ this.Duration }}</td>
+        <td>{{ this.Description }}</td>
+      </tr>
+    </tbody>
+    {{/each}}
 
-  </thead>
-  <tbody id="child">
-  </tbody>
-</table>
+    </thead>
+    <tbody id="child">
+    </tbody>
+  </table>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
   $(document).ready(function () {
-    $('.render').hide();      
-       
-          
+    $('.render').hide();
+
+
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     $.get("/api/user_data").then(function (data) {
@@ -169,7 +164,7 @@
         count: count.val().trim(),
       };
       if (!searchData.location || !searchData.count) {
-        console.log(when1+","+when2)
+        console.log(when1 + "," + when2)
         alert("Please select at least a country and number of records to display - max 100 records")
         return;
       }
@@ -184,7 +179,7 @@
 
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function searchSighting(location, section, when1, when2, count) {      
+    function searchSighting(location, section, when1, when2, count) {
       $.post("/api/sightings", {
         location: location,
         section: section,
@@ -192,26 +187,26 @@
         when2: when2,
         count: count,
       })
-      .then(function(data) {        
-        console.log(data)
-        $('.render').show();
-        $('tbody').children('tr').remove();
-        for (i=0; i<data.length; i++) {
-        $('#child').append('<tr id="check"><td>'+data[i].Date+'</td><td>'
-                           +data[i].Time+'</td><td>'+data[i].Country+
-                           '</td><td>'+data[i].State+'</td><td>'+data[i].City+
-                           '</td><td>'+data[i].Description+'</td><td>'+data[i].Shape+
-                           '</td><td>'+data[i].Duration+'</td><td class="test" >'+data[i].DatePosted+
-                           '</td><td><input class="btn btn-primary favorite" id = "'+ data[i].id+'" type="button" value="Favorite"></td></tr>')
-        }
-   
-        
-        jQuery(':button').click(function () {
+        .then(function (data) {
+          console.log(data)
+          $('.render').show();
+          $('tbody').children('tr').remove();
+          for (i = 0; i < data.length; i++) {
+            $('#child').append('<tr id="check"><td>' + data[i].Date + '</td><td>'
+              + data[i].Time + '</td><td>' + data[i].Country +
+              '</td><td>' + data[i].State + '</td><td>' + data[i].City +
+              '</td><td>' + data[i].Description + '</td><td>' + data[i].Shape +
+              '</td><td>' + data[i].Duration + '</td><td class="test" >' + data[i].DatePosted +
+              '</td><td><input class="btn btn-primary favorite" id = "' + data[i].id + '" type="button" value="Favorite"></td></tr>')
+          }
+
+
+          jQuery(':button').click(function () {
             if (this.value == 'Favorite') {
               this.disabled = true
-              entryID= $(this).attr("id")
-              userID= $(".member-id").text()
-              
+              entryID = $(this).attr("id")
+              userID = $(".member-id").text()
+
               $.post("/api/registered", {
                 location: location,
                 section: section,
@@ -220,19 +215,19 @@
                 count: count,
                 userId: userID,
                 SightingId: entryID,
-              })              
-              
+              })
+
             }
-        });
-           
+          });
+
         })
-      .catch(handleLoginErr);
+        .catch(handleLoginErr);
     }
 
     function handleLoginErr(err) {
       $("#alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
     }
-  }) 
+  })
 
 </script>
