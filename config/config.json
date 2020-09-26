@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "rootroot",
-    "database": "youfo_db",
-    "host": "database-2.cwsmjnezvxvw.us-east-1.rds.amazonaws.com",
+    "username": "bxve7kjla3ih1u3s",
+    "password": "mfjn4wsg5d8nlw1n",
+    "database": "z0hyy59hsmpn6rip",
+    "host": "z8dl7f9kwf2g82re.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
