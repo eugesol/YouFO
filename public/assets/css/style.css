@@ -18,7 +18,10 @@ body{
 .main-container{
   background-color: white
 }
-
+h1{
+  font-weight: bolder;
+  
+}
 h3{
   color: rgb(111, 192, 19);
   font-weight: bolder;
@@ -64,6 +67,7 @@ h3{
 }
 
 #search-btn{
+  color:white;
   background-color: rgb(111, 192, 19);
 }
 #delete-btn{
